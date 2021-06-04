@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Start from './pages/start';
+import Stats from './components/stats';
+import Jumpers from './components/SkiJumpers';
+import dataListSkiJumpers from './components/listSkiJumpers';
 
 function App() {
+  let firstTicketinApp = 1;
+  let budgetinApp = 50000.12;
+const result = dataListSkiJumpers.map(a=> <><li key={a.idd}>{a.name} {a.surname},lat: {a.age} </li>
+</>)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div >
+
+
+      <header>
+        <Stats firstTicket={firstTicketinApp} budget={budgetinApp}/>
+        <menu></menu>
       </header>
+      <Start />
+      <Jumpers dataListSkiJumpers={result}/>
     </div>
   );
 }
