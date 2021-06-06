@@ -6,5 +6,6 @@ export interface SkiJumpers {
     idd: number,
     name: string,
     surname: string,
-    age: string
+    age: string,
+    power: number
 }
